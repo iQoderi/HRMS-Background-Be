@@ -10,8 +10,9 @@ a {
   color: #00B7FF;
 }
 
-.search-result{
+.search-result,.clubMessWrapper{
   width: 80%;
   margin: 30px auto;
 }
+
 

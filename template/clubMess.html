@@ -1,21 +1,33 @@
-<uib-accordion>
-    <uib-accordion-group is-open="status.open">
-        <uib-accordion-heading>
-            I can have markup, too! <i class="pull-right glyphicon"
-                                       ng-class="{'glyphicon-chevron-down': status.open,
+<div class="clubMessWrapper">
+    <uib-accordion>
+        <uib-accordion-group is-open="status.open" ng-repeat="item in datas">
+            <uib-accordion-heading ng-cloak>
+                {{item.username}}<i class="pull-right glyphicon"
+                                    ng-class="{'glyphicon-chevron-down': status.open,
                                        'glyphicon-chevron-right': !status.open}"></i>
-        </uib-accordion-heading>
-        This is just some content to illustrate fancy headings.
-    </uib-accordion-group>
-
-     <uib-accordion-group is-open="status.open">
-        <uib-accordion-heading>
-            I can have markup, too! <i class="pull-right glyphicon"
-                                       ng-class="{'glyphicon-chevron-down': status.open,
-                                       'glyphicon-chevron-right': !status.open}"></i>
-        </uib-accordion-heading>
-        This is just some content to illustrate fancy headings.
-    </uib-accordion-group>
-
-
-</uib-accordion>
+            </uib-accordion-heading>
+            <ul class="person-mess-list">
+                <li><b>部门:</b><span ng-bind="item.department"></span></li>
+                <li><b>手机号:</b><span ng-bind="item.tel"></span></li>
+            </ul>
+            <div class="my-spare-time">
+                <h3 class="spare-time-tit">空闲时间表</h3>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                    <td>#</td>
+                    <td>一二节</td>
+                    <td>三四节</td>
+                    <td>五六节</td>
+                    <td>七八节</td>
+                    <td>九十节</td>
+                    </tr>
+                    <tr ng-repeat="spareTime in data">
+                        <td></td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>

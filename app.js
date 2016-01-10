@@ -3,6 +3,7 @@ var path = require('path');
 var mongoose=require('mongoose');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var ejs=require('ejs');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
@@ -10,7 +11,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-mongoose.connect('mongodb:127.0.0.1:27017/HRMS');
+//mongoose.connect('mongodb:127.0.0.1:27017/HRMS');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

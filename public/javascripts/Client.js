@@ -1,7 +1,7 @@
 /**
  * Created by qoder on 16-1-9.
  */
-angular.module('myApp', ['ngAnimate', 'ui.bootstrap','ui.router']);
+angular.module('myApp', ['ngAnimate', 'ui.bootstrap', 'ui.router']);
 angular.module('myApp').controller('myCtrl', function ($scope, $uibModal, $log, $http) {
         $scope.items = ['item1', 'item2', 'item3'];
         $scope.animationsEnabled = true;
@@ -21,7 +21,6 @@ angular.module('myApp').controller('myCtrl', function ($scope, $uibModal, $log, 
         $http.get("data.JSON")
             .success(function (res) {
                 $scope.datas = res.record;
-                console.log($scope.datas);
             })
 
         $scope.oneAtATime = true;
@@ -30,18 +29,24 @@ angular.module('myApp').controller('myCtrl', function ($scope, $uibModal, $log, 
 
     .config(function ($stateProvider) {
         $stateProvider
-            .state('clubMess',{
-                url:'/clubMess',
-                templateUrl:'./template/clubMess.html'
+            .state('clubMess', {
+                url: '/clubMess',
+                templateUrl: './template/clubMess.html',
+                controller: 'clubMessCtrl'
             })
-            .state('allperson',{
-                url:'/allperson',
-                templateUrl:'./template/tpl.html'
+            .state('allperson', {
+                url: '/allperson',
+                templateUrl: './template/tpl.html'
             })
-
     })
 
-
+angular.module('myApp').controller('clubMessCtrl', function ($scope, $http) {
+    $http.get("data.JSON")
+        .success(function (res) {
+            $scope.datas = res.record;
+            console.log($scope.datas);
+        })
+})
 angular.module('myApp').controller('alertCtrl', function ($scope, $uibModalInstance, items) {
     $scope.searchSparePerson = function () {
         console.log($scope.search.weekday);
