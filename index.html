@@ -34,9 +34,9 @@
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="输入查找的姓名">
+                    <input type="text" class="form-control" placeholder="输入查找的姓名" ng-model="SBusername">
                 </div>
-                <button type="submit" class="btn btn-default">搜索</button>
+                <button type="submit" class="btn btn-default" ng-click="searchSomeone()">搜索</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" ng-click="open()">空闲人员查询</a></li>

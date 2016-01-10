@@ -15,4 +15,14 @@ a {
   margin: 30px auto;
 }
 
+.person-mess-list li{
+  height: 38px;
+  line-height: 38px;
+  list-style: none;
+}
+
+.panel-default > .panel-heading{
+  background: #FFFFFF;
+}
+
 
