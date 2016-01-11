@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, width=device-width">
+    <title>NEUQer人力资源管理后台</title>
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body ng-controller="myCtrl">
+<nav class="navbar  navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:;">NEUQer</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://www.neuqer.com">主页<span class="sr-only">(current)</span></a></li>
+                <li><a ui-sref="allPerson" >所有成员</a></li>
+                <li class="dropdown">
+                    <a ui-sref="clubMess" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">团队成员信息<span class="caret"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="输入查找的姓名" ng-model="SBusername">
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="searchSomeone()">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" ng-click="open()">空闲人员查询</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ui-view=""></div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">空闲人员查询</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>星期</label>
+            <select class="form-control " ng-model="search.weekday" ng-init="search.weekday='Mon'">
+                <option label="星期一" value="Mon" selected>星期一</option>
+                <option label="星期二" value="Tue">星期二</option>
+                <option label="星期三" value="Wed">星期三</option>
+                <option label="星期四" value="Thu">星期四</option>
+                <option label="星期五" value="Fri">星期五</option>
+                <option label="星期六" value="Sat">星期六</option>
+                <option label="星期天" value="Sun">星期天</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>时间</label>
+            <select class="form-control " ng-model="search.myclass" ng-init="search.myclass='yeClass'">
+                <option label="一二节课" value="yeClass" selected>一二节课</option>
+                <option label="三四节课" value="ssClass">三四节课</option>
+                <option label="五六节课" value="wlClass">五六节课</option>
+                <option label="七八节课" value="qqClass">七八节课</option>
+                <option label="九十节课" value="qsClass">九十节课</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>部门</label>
+            <select class="form-control " ng-model="search.department" ng-init="search.department='alldepartment'">
+                <option label="所有部门" value="alldepartment">所有部门</option>
+                <option label="前端" value="FE" selected>前端</option>
+                <option label="后端" value="BE">后端</option>
+                <option label="安卓" value="Android"></option>
+                <option label="iOS" value="iOS">iOS</option>
+                <option label="产品经理" value="PM">产品经理</option>
+                <option label="设计" value="DE">设计</option>
+                <option label="活动运营" value="AOP">活动运营</option>
+                <option label="内容运营" value="COP">内容运营</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="searchSparePerson()">查找</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">退出</button>
+    </div>
+</script>
+</body>
+<script src="../javascripts/angular.js"></script>
+<script src="../javascripts/angular-animate.js"></script>
+<script src="../javascripts/ui-bootstrap-1.0.0.js"></script>
+<script src="../javascripts/ui-bootstrap-tpls-1.0.0.js"></script>
+<script src="../javascripts/angular-ui-router.js"></script>
+<script src="../javascripts/Client.js"></script>
 </html>
+
+<!--jrount-->

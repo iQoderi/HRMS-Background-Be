@@ -10,6 +10,7 @@ var mongoose = require('mongoose'),
     models = require('./models');
 
 for (var m in models) {
+    //console.log(models[m]);
     mongoose.model(m, new Schema(models[m]));
 }
 

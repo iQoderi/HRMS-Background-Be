@@ -2,7 +2,7 @@
  * Created by qoder on 16-1-10.
  */
 module.exports = {
-    user: {
+    users: {
         username: {type: String, required: true},
         department:{type:String},
         tel: {type: String, required: true},
