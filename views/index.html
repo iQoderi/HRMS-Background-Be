@@ -8,7 +8,7 @@
     <link href="../stylesheets/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body ng-controller="myCtrl">
-<nav class="navbar  navbar-inverse navbar-static-top">
+<nav class="navbar  navbar-inverse navbar-static-top navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -49,7 +49,7 @@
     </div>
 </nav>
 
-<div ui-view=""></div>
+<div ui-view="" style="margin-top: 100px"></div>
 <script type="text/ng-template" id="myModalContent.html">
     <div class="modal-header">
         <h3 class="modal-title">空闲人员查询</h3>
